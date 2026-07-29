@@ -1,11 +1,12 @@
-"use client";
+
 
 import Image from "next/image";
 import Link from "next/link";
-import featuredPets from "@/data/featuredPets.json";
 
-export default function FeaturedPets() {
+const FeaturedPets = async () => {
 
+    const res = await fetch(process.env.SERVER_URL)
+    const featuredPets = await res.json()
     return (
         <section className="py-16 px-5 lg:px-8 bg-muted/5 dark:bg-secondary/30">
             <div className="max-w-6xl mx-auto">
@@ -23,7 +24,7 @@ export default function FeaturedPets() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {featuredPets.map((pet) => (
                         <div
-                            key={pet.id}
+                            key={pet._id}
                             className="bg-transparent dark:bg-transparent rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-muted/20 dark:border-muted/10 hover:border-primary/30"
                         >
                             {/* Image */}
@@ -51,7 +52,7 @@ export default function FeaturedPets() {
                                     {pet.species} · {pet.breed}
                                 </p>
                                 <p className="font-body text-sm text-muted/70 mt-1">
-                                     {pet.location}
+                                    {pet.location}
                                 </p>
 
                                 <Link href={`/pets/${pet.id}`}>
@@ -66,4 +67,12 @@ export default function FeaturedPets() {
             </div>
         </section>
     );
-}
+};
+
+export default FeaturedPets;
+
+
+
+
+
+
