@@ -26,12 +26,12 @@ const NavBar = () => {
                 <div className='md:hidden'>
 
                     <div className=''>
-                        <HiMenuAlt1 className='w-6 h-6 text-secondary dark:text-cream cursor-pointer hover:text-primary transition' onClick={openMenu} />
+                        <HiMenuAlt1 className='w-6 h-6 text-dark dark:text-cream cursor-pointer hover:text-primary transition' onClick={openMenu} />
                     </div>
 
                     <ul ref={sideMenuRef}
                     style={{ transform: "translateX(-100%)" }}
-                     className='flex md:hidden flex-col gap-4 py-20 px-10 fixed left-0 top-0 bottom-0 w-64 z-50 h-screen bg-cream dark:bg-secondary shadow-2xl transition duration-300 text-secondary dark:text-cream'>
+                     className='flex md:hidden flex-col gap-4 py-20 px-10 fixed left-0 top-0 bottom-0 w-64 z-50 h-screen bg-cream dark:bg-secondary shadow-2xl transition duration-300 text-dark dark:text-cream'>
 
                         <div className="absolute left-6 top-6">
                             <IoClose
@@ -92,7 +92,7 @@ const NavBar = () => {
                     <li>
                         <Link
                             href="/"
-                            className="font-body text-sm font-semibold text-secondary dark:text-cream hover:text-primary transition"
+                            className="font-body text-sm font-semibold text-dark dark:text-cream hover:text-primary transition"
                         >
                             Home
                         </Link>
@@ -100,7 +100,7 @@ const NavBar = () => {
                     <li>
                         <Link
                             href="/all-pets"
-                            className="font-body text-sm font-semibold text-secondary dark:text-cream hover:text-primary transition"
+                            className="font-body text-sm font-semibold text-dark dark:text-cream hover:text-primary transition"
                         >
                             All Pets
                         </Link>
@@ -108,7 +108,7 @@ const NavBar = () => {
                     <li>
                         <Link
                             href="/my-requests"
-                            className="font-body text-sm font-semibold text-secondary dark:text-cream hover:text-primary transition"
+                            className="font-body text-sm font-semibold text-dark dark:text-cream hover:text-primary transition"
                         >
                             My Requests
                         </Link>
@@ -116,7 +116,7 @@ const NavBar = () => {
                     <li>
                         <Link
                             href="/add-pet"
-                            className="font-body text-sm font-semibold text-secondary dark:text-cream hover:text-primary transition"
+                            className="font-body text-sm font-semibold text-dark dark:text-cream hover:text-primary transition"
                         >
                             Add Pet
                         </Link>

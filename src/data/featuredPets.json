@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Max",
+    "species": "Dog",
+    "breed": "Golden Retriever",
+    "age": 2,
+    "gender": "Male",
+    "image": "/pets/max.jpg",
+    "location": "Dhaka, Gulshan",
+    "adoptionFee": 1500,
+    "description": "Friendly and intelligent. Great with kids. Fully vaccinated."
+  },
+  {
+    "id": 2,
+    "name": "Bella",
+    "species": "Cat",
+    "breed": "Persian",
+    "age": 1.5,
+    "gender": "Female",
+    "image": "/pets/bella.jpg",
+    "location": "Chittagong",
+    "adoptionFee": 2000,
+    "description": "Very cuddly and shy. Gets along with other pets."
+  },
+  {
+    "id": 3,
+    "name": "Rocky",
+    "species": "Dog",
+    "breed": "German Shepherd",
+    "age": 3,
+    "gender": "Male",
+    "image": "/pets/rocky.jpg",
+    "location": "Sylhet",
+    "adoptionFee": 2500,
+    "description": "Loyal and protective. Perfect for large homes."
+  },
+  {
+    "id": 4,
+    "name": "Mimi",
+    "species": "Rabbit",
+    "breed": "Holland Lop",
+    "age": 1,
+    "gender": "Female",
+    "image": "/pets/mimi.jpg",
+    "location": "Rajshahi",
+    "adoptionFee": 1000,
+    "description": "Tiny paws, big cheeks. Loves kids and attention."
+  },
+  {
+    "id": 5,
+    "name": "Tweety",
+    "species": "Bird",
+    "breed": "Cockatiel",
+    "age": 0.8,
+    "gender": "Male",
+    "image": "/pets/tweety.jpg",
+    "location": "Khulna",
+    "adoptionFee": 1800,
+    "description": "Sings melodiously. Loves human company."
+  },
+  {
+    "id": 6,
+    "name": "Leo",
+    "species": "Dog",
+    "breed": "Beagle",
+    "age": 1.2,
+    "gender": "Male",
+    "image": "/pets/leo.jpg",
+    "location": "Barishal",
+    "adoptionFee": 1200,
+    "description": "High energy. Loves walks and gardens."
+  }
+]

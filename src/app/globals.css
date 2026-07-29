@@ -2,29 +2,33 @@
 @import "@heroui/styles";
 
 :root {
-  --color-primary: #E07A5F;
-  --color-primary-dark: #C05D42;
-  --color-secondary: #3D405B;
-  --color-accent: #F2CC8F;
-  --color-success: #81B29A;
-  --color-danger: #C44B3C;
-  --color-cream: #FDFBF7;
-  --color-dark: #2B2D42;
-  --color-muted: #8D8FAB;
-  --background: #FDFBF7;
-  --foreground: #2B2D42;
+  --color-primary: #E8896C;
+  --color-primary-dark: #D47356;
+  --color-secondary: #2D3A4B;
+  --color-accent: #F5C97A;
+  --color-success: #6B9E8A;
+  --color-danger: #D65A4A;
+  --foreground: #1E293B;
+  --color-dark: #1E293B;
+  --color-muted: #94A3B8;
+  --background: #FFFFFF;
+--color-cream: #FFFFFF;
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1A1A2E;
-    --foreground: #EAEAEA;
-    --color-primary: #F28B72;
-    --color-primary-dark: #E07A5F;
-    --color-secondary: #5A5D7A;
-    --color-cream: #22223B;
-    --color-dark: #EAEAEA;
-    --color-muted: #A8AABE;
+    --background: #0F172A;
+    --foreground: #F1F5F9;
+    --color-primary: #F59B85;
+    --color-primary-dark: #E8896C;
+    --color-secondary: #475569;
+    --color-accent: #F5C97A;
+    --color-success: #6B9E8A;
+    --color-danger: #D65A4A;
+    --color-cream: #1E293B;
+    --color-dark: #F1F5F9;
+    --color-muted: #94A3B8;
   }
 }
 
@@ -50,6 +54,11 @@ body {
   font-family: var(--font-body);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
 }
