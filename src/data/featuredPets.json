@@ -6,7 +6,7 @@
     "breed": "Golden Retriever",
     "age": 2,
     "gender": "Male",
-    "image": "/pets/max.jpg",
+    "image": "https://images.pexels.com/photos/20680840/pexels-photo-20680840.jpeg?_gl=1*1ex5584*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3ODUzNDkxNjIkbzgkZzEkdDE3ODUzNTA5NzIkajEkbDAkaDA.",
     "location": "Dhaka, Gulshan",
     "adoptionFee": 1500,
     "description": "Friendly and intelligent. Great with kids. Fully vaccinated."
@@ -18,7 +18,7 @@
     "breed": "Persian",
     "age": 1.5,
     "gender": "Female",
-    "image": "/pets/bella.jpg",
+    "image": "https://images.pexels.com/photos/33585487/pexels-photo-33585487.jpeg?_gl=1*1tcv4iv*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3ODUzNDkxNjIkbzgkZzEkdDE3ODUzNTA5MTMkajYwJGwwJGgw",
     "location": "Chittagong",
     "adoptionFee": 2000,
     "description": "Very cuddly and shy. Gets along with other pets."
@@ -30,7 +30,7 @@
     "breed": "German Shepherd",
     "age": 3,
     "gender": "Male",
-    "image": "/pets/rocky.jpg",
+    "image": "https://images.pexels.com/photos/34793826/pexels-photo-34793826.jpeg?_gl=1*seog4j*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3ODUzNDkxNjIkbzgkZzEkdDE3ODUzNTA4MjAkajYwJGwwJGgw",
     "location": "Sylhet",
     "adoptionFee": 2500,
     "description": "Loyal and protective. Perfect for large homes."
@@ -42,7 +42,7 @@
     "breed": "Holland Lop",
     "age": 1,
     "gender": "Female",
-    "image": "/pets/mimi.jpg",
+    "image": "https://images.pexels.com/photos/19613749/pexels-photo-19613749.jpeg?_gl=1*zybuvm*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3ODUzNDkxNjIkbzgkZzEkdDE3ODUzNTA3MzgkajYwJGwwJGgw",
     "location": "Rajshahi",
     "adoptionFee": 1000,
     "description": "Tiny paws, big cheeks. Loves kids and attention."
@@ -54,7 +54,7 @@
     "breed": "Cockatiel",
     "age": 0.8,
     "gender": "Male",
-    "image": "/pets/tweety.jpg",
+    "image": "https://images.pexels.com/photos/28981496/pexels-photo-28981496.jpeg?_gl=1*1dl264j*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3ODUzNDkxNjIkbzgkZzEkdDE3ODUzNTA3ODYkajEyJGwwJGgw",
     "location": "Khulna",
     "adoptionFee": 1800,
     "description": "Sings melodiously. Loves human company."
@@ -66,7 +66,7 @@
     "breed": "Beagle",
     "age": 1.2,
     "gender": "Male",
-    "image": "/pets/leo.jpg",
+    "image": "https://images.pexels.com/photos/18941334/pexels-photo-18941334.jpeg?_gl=1*seog4j*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3ODUzNDkxNjIkbzgkZzEkdDE3ODUzNTA4MjAkajYwJGwwJGgw",
     "location": "Barishal",
     "adoptionFee": 1200,
     "description": "High energy. Loves walks and gardens."
