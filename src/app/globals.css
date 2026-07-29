@@ -1,26 +1,55 @@
 @import "tailwindcss";
+@import "@heroui/styles";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #E07A5F;
+  --color-primary-dark: #C05D42;
+  --color-secondary: #3D405B;
+  --color-accent: #F2CC8F;
+  --color-success: #81B29A;
+  --color-danger: #C44B3C;
+  --color-cream: #FDFBF7;
+  --color-dark: #2B2D42;
+  --color-muted: #8D8FAB;
+  --background: #FDFBF7;
+  --foreground: #2B2D42;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1A1A2E;
+    --foreground: #EAEAEA;
+    --color-primary: #F28B72;
+    --color-primary-dark: #E07A5F;
+    --color-secondary: #5A5D7A;
+    --color-cream: #22223B;
+    --color-dark: #EAEAEA;
+    --color-muted: #A8AABE;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-success: var(--color-success);
+  --color-danger: var(--color-danger);
+  --color-cream: var(--color-cream);
+  --color-dark: var(--color-dark);
+  --color-muted: var(--color-muted);
+  --font-heading: Nunito, sans-serif;
+  --font-body: Inter, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
