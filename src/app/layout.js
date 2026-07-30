@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { Providers } from "./providers";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const nunito = Nunito({
   variable: "--font-heading",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <NavBar />
           {children}
+          <Toaster position="top-center" />
           <Footer/>
         </Providers>
       </body>
