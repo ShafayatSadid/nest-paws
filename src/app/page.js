@@ -1,4 +1,6 @@
 import FeaturedPets from "@/components/FeaturedPets";
+import SuccessStories from "@/components/SuccessStories";
+import WhyAdopt from "@/components/WhyAdopt";
 import { Button } from "@heroui/react";
 import Link from "next/link";
 
@@ -29,7 +31,13 @@ export default function Home() {
       </section>
 
       {/* Featured Pets */}
-      <FeaturedPets/>
+      <FeaturedPets />
+
+      {/* Why Adopt */}
+      <WhyAdopt />
+
+      {/* SuccessStories */}
+      <SuccessStories />
     </main>
   );
 }
