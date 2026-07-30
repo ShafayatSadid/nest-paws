@@ -2,6 +2,7 @@ import { Nunito, Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { Providers } from "./providers";
+import Footer from "@/components/Footer";
 
 const nunito = Nunito({
   variable: "--font-heading",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <NavBar />
           {children}
+          <Footer/>
         </Providers>
       </body>
     </html>
