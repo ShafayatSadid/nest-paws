@@ -1,4 +1,7 @@
+import AdoptionProcess from "@/components/AdoptionProcess";
 import FeaturedPets from "@/components/FeaturedPets";
+import HappyTails from "@/components/HappyTails";
+import PetCareTips from "@/components/PetCareTips";
 import SuccessStories from "@/components/SuccessStories";
 import WhyAdopt from "@/components/WhyAdopt";
 import { Button } from "@heroui/react";
@@ -38,6 +41,15 @@ export default function Home() {
 
       {/* SuccessStories */}
       <SuccessStories />
+
+      {/* PetCareTips */}
+      <PetCareTips />
+
+      {/* HappyTails */}
+      <HappyTails />
+
+      {/* AdoptionProcess */}
+      <AdoptionProcess />
     </main>
   );
 }
