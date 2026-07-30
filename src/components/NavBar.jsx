@@ -130,7 +130,7 @@ const NavBar = () => {
 
                     {/* Profile Button */}
                     <Button className="bg-primary text-white font-heading font-semibold">
-                        Profile
+                        <Link href={'/register'}>Register</Link>
                     </Button>
                 </div>
             </nav>
