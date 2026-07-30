@@ -31,7 +31,12 @@ export default function RegisterPage() {
             image: user.photoURL,
         })
 
-        console.log({ data, error });
+        if(data){
+            toast('Created your account successfully')
+        }
+        else{
+            toast(error)
+        }
 
     };
 
