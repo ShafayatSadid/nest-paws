@@ -149,7 +149,6 @@ const NavBar = () => {
             ) : user ? (
               <Dropdown>
                 <Dropdown.Trigger className="rounded-full cursor-pointer">
-                  {/* ✅ classNames বাদ দেওয়া হয়েছে */}
                   <Avatar size="md">
                     <Avatar.Image alt={user?.name} src={user?.image} />
                     <Avatar.Fallback delayMs={600}>
@@ -162,7 +161,6 @@ const NavBar = () => {
                   {/* User Info Header */}
                   <div className="px-4 pt-4 pb-3 border-b border-muted/10 dark:border-muted/5">
                     <div className="flex items-center gap-3">
-                      {/* ✅ classNames বাদ দেওয়া হয়েছে */}
                       <Avatar size="sm">
                         <Avatar.Image alt={user?.name} src={user?.image} />
                         <Avatar.Fallback delayMs={600}>
@@ -180,22 +178,8 @@ const NavBar = () => {
                     </div>
                   </div>
 
-                  {/* Dropdown Menu */}
-                  <Dropdown.Menu
-                    classNames={{
-                      base: "p-2",
-                      list: "gap-1",
-                      item: [
-                        "font-body text-sm text-foreground",
-                        "data-[hover=true]:bg-primary/10 dark:data-[hover=true]:bg-primary/20",
-                        "data-[hover=true]:text-primary",
-                        "data-[active=true]:bg-primary/20",
-                        "rounded-xl",
-                        "px-3 py-2.5",
-                        "transition duration-200",
-                      ],
-                    }}
-                  >
+
+                  <Dropdown.Menu>
                     <Dropdown.Item
                       id="dashboard"
                       textValue="Dashboard"
@@ -203,7 +187,7 @@ const NavBar = () => {
                     >
                       <div className="flex items-center gap-3">
                         <Persons className="size-4 text-muted" />
-                        <Label>Dashboard</Label>
+                        <Label className="text-muted">Dashboard</Label>
                       </div>
                     </Dropdown.Item>
 
@@ -214,7 +198,7 @@ const NavBar = () => {
                     >
                       <div className="flex items-center gap-3">
                         <Gear className="size-4 text-muted" />
-                        <Label>Profile</Label>
+                        <Label className="text-muted">Profile</Label>
                       </div>
                     </Dropdown.Item>
 
