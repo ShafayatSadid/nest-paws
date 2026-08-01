@@ -127,7 +127,7 @@ export default function LoginPage() {
 
         <button
           onClick={signInGoogle}
-          className="w-full flex items-center justify-center gap-3 border border-muted/30 dark:border-muted/20 hover:border-primary/50 text-foreground font-body font-medium py-2.5 rounded-xl transition"
+          className="w-full flex items-center cursor-pointer justify-center gap-3 border border-muted/30 dark:border-muted/20 hover:border-primary/50 text-foreground font-body font-medium py-2.5 rounded-xl transition"
         >
           <FcGoogle className="text-xl" />
           Continue with Google

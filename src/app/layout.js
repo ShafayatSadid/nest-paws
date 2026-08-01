@@ -1,7 +1,7 @@
 import { Nunito, Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
-import { Providers } from "./providers";
+// import { Providers } from "./providers";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 
@@ -26,12 +26,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${nunito.variable} ${inter.variable} h-full`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col antialiased bg-background text-foreground">
-        <Providers>
+        
           <NavBar />
           {children}
           <Toaster position="top-center" />
           <Footer/>
-        </Providers>
+        
       </body>
     </html>
   );
