@@ -43,6 +43,11 @@ export default function LoginPage() {
     }
   };
 
+  const signInGoogle = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
   return (
     <div className="min-h-[calc(100vh-80px)] flex items-center justify-center px-5 py-12 my-20 bg-background">
       <div className="max-w-md w-full bg-transparent rounded-2xl p-8 shadow-lg border border-muted/20 dark:border-muted/10">
@@ -121,7 +126,7 @@ export default function LoginPage() {
         </div>
 
         <button
-          onClick={() => toast.info("Google login coming soon!")}
+          onClick={signInGoogle}
           className="w-full flex items-center justify-center gap-3 border border-muted/30 dark:border-muted/20 hover:border-primary/50 text-foreground font-body font-medium py-2.5 rounded-xl transition"
         >
           <FcGoogle className="text-xl" />
