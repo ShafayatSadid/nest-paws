@@ -2,67 +2,94 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import { Form, Button, Input, Label, FieldError, TextField } from "@heroui/react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import { authClient } from "@/lib/auth-client";
 
 export default function LoginPage() {
+  const router = useRouter();
+
   const [isShowPassword, setIsShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const onSubmit = async (e) => {
+    e.preventDefault();
 
-  const onSubmit = async (data) => {
-    // এখানে আপনার লগইন লজিক আসবে
-    // উদাহরণ: const result = await loginUser(data.email, data.password);
-    console.log("Login Data:", data);
-    toast.success("Login successful! (ডেমো)");
+    const formData = new FormData(e.currentTarget);
+    const user = Object.fromEntries(formData.entries());
+
+    setLoading(true);
+
+    try {
+      const { data, error } = await authClient.signIn.email({
+        email: user.email,
+        password: user.password,
+      });
+
+      if (data) {
+        toast.success("Welcome back!");
+        router.push("/");
+        return;
+      }
+
+      toast.error(error?.message || "Login failed");
+    } catch (err) {
+      toast.error(err.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="min-h-[calc(100vh-80px)] flex items-center justify-center px-5 py-12 my-20 bg-background">
       <div className="max-w-md w-full bg-transparent rounded-2xl p-8 shadow-lg border border-muted/20 dark:border-muted/10">
-
         <div className="text-center mb-8">
           <h1 className="font-heading text-3xl font-extrabold text-foreground">Welcome Back</h1>
           <p className="font-body text-muted mt-2">Login to your account</p>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-
-          {/* EMAIL */}
-          <div>
-            <label className="font-body text-sm font-medium text-foreground block mb-1">Email</label>
-            <input
+        <Form className="space-y-5" onSubmit={onSubmit}>
+          {/* Email */}
+          <TextField
+            isRequired
+            name="email"
+            validate={(value) => {
+              if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+                return "Please enter a valid email address";
+              }
+              return null;
+            }}
+          >
+            <Label className="font-body text-sm font-medium text-foreground">Email</Label>
+            <Input
+              name="email"
               type="email"
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Invalid email address",
-                },
-              })}
-              className="w-full px-4 py-2.5 rounded-xl border border-muted/30 dark:border-muted/20 bg-transparent text-foreground focus:outline-none focus:border-primary transition"
               placeholder="you@example.com"
+              className="w-full px-4 py-2.5 rounded-xl border border-muted/30 dark:border-muted/20 bg-transparent text-foreground focus:outline-none focus:border-primary transition"
             />
-            {errors.email && (
-              <p className="font-body text-xs text-danger mt-1">{errors.email.message}</p>
-            )}
-          </div>
+            <FieldError className="font-body text-xs text-danger mt-1" />
+          </TextField>
 
-          {/* PASSWORD */}
-          <div>
-            <label className="font-body text-sm font-medium text-foreground block mb-1">Password</label>
+          {/* Password */}
+          <TextField
+            isRequired
+            name="password"
+            type={isShowPassword ? "text" : "password"}
+            validate={(value) => {
+              if (!value || value.length === 0) return "Password is required";
+              return null;
+            }}
+          >
+            <Label className="font-body text-sm font-medium text-foreground">Password</Label>
             <div className="relative">
-              <input
+              <Input
+                name="password"
                 type={isShowPassword ? "text" : "password"}
-                {...register("password", { required: "Password is required" })}
+                placeholder=""
                 className="w-full px-4 py-2.5 rounded-xl border border-muted/30 dark:border-muted/20 bg-transparent text-foreground focus:outline-none focus:border-primary transition pr-12"
-                placeholder="••••••••"
               />
               <button
                 type="button"
@@ -72,18 +99,17 @@ export default function LoginPage() {
                 {isShowPassword ? <IoEyeOffOutline size={20} /> : <IoEyeOutline size={20} />}
               </button>
             </div>
-            {errors.password && (
-              <p className="font-body text-xs text-danger mt-1">{errors.password.message}</p>
-            )}
-          </div>
+            <FieldError className="font-body text-xs text-danger mt-1" />
+          </TextField>
 
-          <button
+          <Button
             type="submit"
-            className="w-full bg-primary hover:bg-primary-dark text-white font-heading font-semibold py-2.5 rounded-xl transition"
+            disabled={loading}
+            className="w-full bg-primary hover:bg-primary-dark text-white font-heading font-semibold py-2.5 rounded-xl transition disabled:opacity-50"
           >
-            Login
-          </button>
-        </form>
+            {loading ? "Logging in..." : "Login"}
+          </Button>
+        </Form>
 
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
