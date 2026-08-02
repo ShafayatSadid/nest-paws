@@ -18,6 +18,6 @@ export async function proxy(request) {
 
 export const config = {
   matcher: [
-    '/all-pets', '/my-requests', '/add-pet'
+    '/my-requests', '/add-pet', '/all-pets/pet/:path*'
   ]
 }

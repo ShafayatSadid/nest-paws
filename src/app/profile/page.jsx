@@ -3,7 +3,7 @@
 import { use, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Form, Button, Input, Label, FieldError, TextField, Spinner } from "@heroui/react";
+import { Form, Button, Input, Label, FieldError, TextField, Spinner, Avatar } from "@heroui/react";
 import toast from "react-hot-toast";
 
 import { authClient } from "@/lib/auth-client";
@@ -11,24 +11,24 @@ import { authClient } from "@/lib/auth-client";
 export default function UserProfilePage() {
     const router = useRouter();
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false)
 
     const { data: session, isPending } = authClient.useSession()
     const user = session?.user;
 
-    console.log('user:', user);
+    
     const onSubmit = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
         const user = Object.fromEntries(formData.entries());
 
-        setLoading(true);
+       setLoading(true)
 
         try {
-            const { data, error } = await authClient.signIn.email({
-                email: user.email,
-                password: user.password,
+            const { data, error } = await authClient.updateUser({
+                name: user?.name,
+                image: user?.image
             });
 
             if (data) {
@@ -57,9 +57,19 @@ export default function UserProfilePage() {
         return (
             <div className="min-h-[calc(100vh-80px)] flex items-center justify-center px-5 py-12 my-20 bg-background">
                 <div className="max-w-md w-full bg-transparent rounded-2xl p-8 shadow-lg border border-muted/20 dark:border-muted/10">
+
+                    <div className="flex justify-center items-center my-5">
+                        <Avatar size="lg">
+                            <Avatar.Image alt={user?.name} src={user?.image} />
+                            <Avatar.Fallback delayMs={600}>
+                                {user?.name?.slice(0, 2).toUpperCase()}
+                            </Avatar.Fallback>
+                        </Avatar>
+                    </div>
+
                     <div className="text-center mb-8">
                         <h1 className="font-heading text-3xl font-extrabold text-foreground">Your Profile</h1>
-                        <p className="font-body text-muted mt-2">Your information</p>
+                        <p className="font-body text-muted mt-2">Update your information</p>
                     </div>
 
                     <Form className="space-y-5" onSubmit={onSubmit}>
@@ -88,6 +98,7 @@ export default function UserProfilePage() {
                         {/* Email */}
                         <TextField
                             isRequired
+                            isReadOnly
                             name="email"
                             defaultValue={user?.email}
                             validate={(value) => {
@@ -126,7 +137,7 @@ export default function UserProfilePage() {
                             disabled={loading}
                             className="w-full bg-primary hover:bg-primary-dark text-white font-heading font-semibold py-2.5 rounded-xl transition disabled:opacity-50"
                         >
-                            {loading ? "Logging in..." : "Update Your Profile"}
+                            {loading ? "Updating..." : "Update Your Profile"}
                         </Button>
                     </Form>
 
