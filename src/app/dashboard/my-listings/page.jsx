@@ -23,13 +23,12 @@ export default async function MyListingsPage() {
     })
 
 
-    const url = `${process.env.SERVER_URL}/my-listings?email=${userEmail}`;
-
-    const res = await fetch(url, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/my-listings`, {
         headers: {
             Authorization: `Bearer ${token}`,
         },
-    });
+    }
+    );
 
     const myListings = await res.json();
 
@@ -38,7 +37,7 @@ export default async function MyListingsPage() {
     const available = myListings?.filter(pet => pet?.adopted === false)
 
 
-    
+
 
 
 
@@ -136,7 +135,7 @@ export default async function MyListingsPage() {
                                                 View
                                             </button>
                                         </Link>
-                                        <DeletePet petId ={pet._id} token={token}/>
+                                        <DeletePet petId={pet._id} token={token} />
                                     </div>
                                 </div>
                             </div>))}
