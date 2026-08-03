@@ -69,24 +69,8 @@ const NavBar = () => {
                 All Pets
               </Link>
             </li>
-            <li>
-              <Link
-                onClick={closeMenu}
-                href="/my-requests"
-                className="font-heading text-lg font-bold hover:text-primary transition"
-              >
-                My Requests
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={closeMenu}
-                href="/add-pet"
-                className="font-heading text-lg font-bold hover:text-primary transition"
-              >
-                Add Pet
-              </Link>
-            </li>
+            
+            
           </ul>
         </div>
 
@@ -115,22 +99,8 @@ const NavBar = () => {
               All Pets
             </Link>
           </li>
-          <li>
-            <Link
-              href="/my-requests"
-              className="font-body text-sm font-semibold text-dark dark:text-cream hover:text-primary transition"
-            >
-              My Requests
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/add-pet"
-              className="font-body text-sm font-semibold text-dark dark:text-cream hover:text-primary transition"
-            >
-              Add Pet
-            </Link>
-          </li>
+          
+         
         </ul>
 
         {/* Right Side: Theme + Profile */}

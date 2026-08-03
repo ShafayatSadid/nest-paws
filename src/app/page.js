@@ -13,7 +13,7 @@ export default function Home() {
     <main className="flex-1">
       
       {/* Hero Section */}
-      <section className="min-h-[calc(100vh-80px)] flex items-center justify-center px-5 lg:px-8 bg-cream dark:bg-secondary/90">
+      <section className="min-h-[calc(100vh-80px)] flex items-center justify-center px-5 lg:px-8 bg-background">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-dark dark:text-cream leading-tight">
             Find Your{" "}

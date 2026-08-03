@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const FeaturedPets = async () => {
 
-    const res = await fetch(process.env.SERVER_URL)
+    const res = await fetch(`${process.env.SERVER_URL}/pets`)
     const allPets = await res.json()
     const featuredPets = allPets.slice(0, 6)
     return (
@@ -56,7 +56,7 @@ const FeaturedPets = async () => {
                                     {pet.location}
                                 </p>
 
-                                <Link href={`/pets/pet/${pet.id}`}>
+                                <Link href={`/all-pets/pet/${pet._id}`}>
                                     <button className="w-full mt-4 bg-primary/10 hover:bg-primary text-primary hover:text-white font-heading font-semibold py-2.5 rounded-full transition-all duration-300 border border-primary/20 hover:border-primary">
                                         View Details
                                     </button>

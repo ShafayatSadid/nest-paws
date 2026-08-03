@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const allPetsPage = async () => {
 
-    const res = await fetch(process.env.SERVER_URL)
+    const res = await fetch(`${process.env.SERVER_URL}/pets`)
     const pets = await res.json();
 
 

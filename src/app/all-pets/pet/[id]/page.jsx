@@ -17,7 +17,7 @@ const PetDetailsPage = async ({ params }) => {
 
     const user = session?.user;
 
-    const res = await fetch(`${process.env.SERVER_URL}/${id}`,{
+    const res = await fetch(`${process.env.SERVER_URL}/pets/${id}`,{
         headers:{
             authorization: `bearer: ${token}`
         }

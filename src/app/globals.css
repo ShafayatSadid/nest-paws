@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "@heroui/styles";
 
+
 :root {
   --color-primary: #E8896C;
   --color-primary-dark: #D47356;
@@ -8,29 +9,45 @@
   --color-accent: #F5C97A;
   --color-success: #6B9E8A;
   --color-danger: #D65A4A;
-  --foreground: #1E293B;
-  --color-dark: #1E293B;
   --color-muted: #94A3B8;
   --background: #FFFFFF;
+  --foreground: #1E293B;
   --color-cream: #FFFFFF;
-
+  --color-dark: #1E293B;
 }
+
+
+html.dark {
+  --color-primary: #F59B85;
+  --color-primary-dark: #E8896C;
+  --color-secondary: #475569;
+  --color-accent: #F5C97A;
+  --color-success: #6B9E8A;
+  --color-danger: #D65A4A;
+  --color-muted: #94A3B8;
+  --background: #0F172A;
+  --foreground: #F1F5F9;
+  --color-cream: #1E293B;
+  --color-dark: #F1F5F9;
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0F172A;
-    --foreground: #F1F5F9;
     --color-primary: #F59B85;
     --color-primary-dark: #E8896C;
     --color-secondary: #475569;
     --color-accent: #F5C97A;
     --color-success: #6B9E8A;
     --color-danger: #D65A4A;
+    --color-muted: #94A3B8;
+    --background: #0F172A;
+    --foreground: #F1F5F9;
     --color-cream: #1E293B;
     --color-dark: #F1F5F9;
-    --color-muted: #94A3B8;
   }
 }
+
 
 @theme inline {
   --color-background: var(--background);
@@ -48,10 +65,12 @@
   --font-body: Inter, sans-serif;
 }
 
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -62,5 +81,3 @@ h5,
 h6 {
   font-family: var(--font-heading);
 }
-
-
