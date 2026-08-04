@@ -9,14 +9,11 @@ import toast from "react-hot-toast";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import DeletePet from "@/components/DeletePet";
+import RequestButton from "@/components/RequestButton";
 
 export default async function MyListingsPage() {
 
-    const session = await auth.api.getSession({
-        headers: await headers()
-    })
-
-    const userEmail = session?.user?.email
+    
 
     const { token } = await auth.api.getToken({
         headers: await headers()
@@ -119,15 +116,10 @@ export default async function MyListingsPage() {
 
                                     {/* Action Buttons */}
                                     <div className="grid grid-cols-2 gap-2 pt-2">
-                                        <button
-
-                                            className="bg-primary/10 hover:bg-primary/20 text-primary text-sm font-medium py-2 rounded-xl transition"
-                                        >
-                                            📋 Requests
-                                        </button>
+                                        <RequestButton pet={pet}/>
                                         <Link href={`/dashboard/update-pet/${pet._id}`}>
                                             <button className="bg-secondary/10 hover:bg-secondary/20 text-secondary text-sm font-medium py-2 rounded-xl transition w-full">
-                                                ✏️ Edit
+                                                 Edit
                                             </button>
                                         </Link>
                                         <Link href={`/all-pets/pet/${pet._id}`}>

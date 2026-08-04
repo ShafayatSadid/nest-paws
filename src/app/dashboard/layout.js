@@ -51,7 +51,8 @@ export default function DashboardLayout({ children }) {
 
   return (
     <div className="min-h-[calc(100vh-80px)] flex flex-col md:flex-row bg-background mt-20">
-      {/* মোবাইল হেডার */}
+
+      {/* mobile header */}
       <div className="md:hidden flex items-center justify-between px-5 py-3 bg-background border-b border-gray-200 dark:border-gray-700">
         <h2 className="font-heading text-lg font-bold text-foreground">Dashboard</h2>
         <button
@@ -62,7 +63,7 @@ export default function DashboardLayout({ children }) {
         </button>
       </div>
 
-      {/* সাইডবার */}
+      {/* side bar */}
       <aside
         className={`
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} 
@@ -79,7 +80,7 @@ export default function DashboardLayout({ children }) {
           shadow-2xl md:shadow-none
         `}
       >
-        {/* মোবাইলে ক্লোজ বাটন */}
+        {/* mobile close btn */}
         <button
           onClick={() => setIsSidebarOpen(false)}
           className="md:hidden absolute top-4 right-4 text-foreground hover:text-primary transition"
@@ -87,13 +88,13 @@ export default function DashboardLayout({ children }) {
           <FaTimes size={24} />
         </button>
 
-        {/* ড্যাশবোর্ড টাইটেল */}
+        {/* title */}
         <div className="mb-6">
           <h2 className="font-heading text-xl font-bold text-foreground">Dashboard</h2>
           <p className="font-body text-sm text-muted">Manage your pets & requests</p>
         </div>
 
-        {/* ইউজার প্রোফাইল */}
+        {/* user profile */}
         <div className="flex items-center gap-3 mb-6 pb-4 border-b border-muted/20 dark:border-muted/10">
           <div className="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary font-heading font-bold text-sm">
             {user?.name?.charAt(0)?.toUpperCase() || <FaUser className="text-primary" />}
@@ -108,7 +109,7 @@ export default function DashboardLayout({ children }) {
           </div>
         </div>
 
-        {/* ট্যাব */}
+       
         <nav className="flex-1 space-y-1">
           {tabs.map((tab) => {
             const Icon = tab.icon;
@@ -137,7 +138,7 @@ export default function DashboardLayout({ children }) {
           })}
         </nav>
 
-        {/* প্রোফাইল লিংক */}
+       
         <div className="pt-4 mt-4 border-t border-muted/20 dark:border-muted/10">
           <Link
             href="/profile"
@@ -149,12 +150,12 @@ export default function DashboardLayout({ children }) {
         </div>
       </aside>
 
-      {/* মূল কন্টেন্ট */}
+      
       <main className="flex-1 p-5 lg:p-8 overflow-y-auto bg-background min-h-[calc(100vh-80px)]">
         {children}
       </main>
 
-      {/* সাইডবার ওভারলে (মোবাইলে) */}
+     
       {isSidebarOpen && (
         <div
           className="md:hidden fixed inset-0 bg-black/50 z-30"

@@ -20,7 +20,7 @@ export default function AddPetPage() {
     const user = session?.user;
     const [loading, setLoading] = useState(false);
 
-    // ⚠️ কোনো ফাংশনালিটি পরিবর্তন করিনি – শুধু UI
+    
     const onSubmit = async (e) => {
         setLoading(true);
         e.preventDefault();
@@ -48,7 +48,7 @@ export default function AddPetPage() {
             }
         } catch (err) {
             console.log('error:', err);
-            toast.error(err);
+            toast.error(err.message);
         } finally {
             setLoading(false);
         }
