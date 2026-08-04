@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🐾 Nest Paws
 
-## Getting Started
+Nest Paws is a full-stack pet adoption platform built with the MERN stack (MongoDB, Express.js, React/Next.js, Node.js). It connects loving families with pets in need of a forever home.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎯 Purpose
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The purpose of Nest Paws is to provide a seamless and user-friendly platform where:
+- Users can browse and search for adoptable pets
+- Authenticated users can submit adoption requests
+- Pet owners and shelters can manage their listings and handle adoption requests
+- All data is securely stored and managed in MongoDB
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 Live URL
 
-## Learn More
+🔗 **Live Demo:** [https://nest-paws.vercel.app](https://nest-paws.vercel.app)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📸 Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+>[text](../../../../../..) 
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ✨ Features
+
+- **🔐 Authentication** – Secure login and registration with JWT authentication, HTTP-only cookies, and Google OAuth support.
+- **🐶 Browse & Search Pets** – Explore all available pets with advanced search by name, filter by species, and sorting options.
+- **📋 Adoption Requests** – Submit adoption requests with pickup date and message. Track request status (Pending / Approved / Rejected).
+- **📊 Dashboard** – Manage your pet listings, track adoption requests, and update pet information all from a dedicated dashboard.
+- **📝 CRUD Operations** – Full create, read, update, and delete functionality for pet listings (only for the pet owner).
+- **🌓 Dark/Light Mode** – Toggle between dark and light themes for a comfortable browsing experience.
+- **📱 Fully Responsive** – Optimized for mobile, tablet, and desktop devices.
+- **🔒 Secure Backend APIs** – All private routes are protected with JWT verification middleware.
+
+---
+
+## 📦 NPM Packages Used
+
+### Client Side (Next.js)
+
+| Package | Purpose |
+|---------|---------|
+| `next` | React framework for server-side rendering and routing |
+| `react` & `react-dom` | Core React libraries |
+| `@heroui/react` | UI component library |
+| `next-themes` | Dark/light theme management |
+| `react-hook-form` | Form handling and validation |
+| `react-hot-toast` | Toast notifications |
+| `react-icons` | Icon library |
+| `axios` | HTTP client for API calls |
+| `framer-motion` | Animations (optional) |
+
+### Server Side (Express.js)
+
+| Package | Purpose |
+|---------|---------|
+| `express` | Web framework for Node.js |
+| `mongoose` | MongoDB ODM for database modeling |
+| `jsonwebtoken` | JWT generation and verification |
+| `bcryptjs` | Password hashing |
+| `cookie-parser` | Parse HTTP cookies |
+| `cors` | Enable Cross-Origin Resource Sharing |
+| `dotenv` | Environment variable management |
+| `express-validator` | Input validation |
+| `jose` | JWT verification with JWKS |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- MongoDB Atlas account or local MongoDB instance
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ShafayatSadid/nest-paws.git
+   cd nest-paws
