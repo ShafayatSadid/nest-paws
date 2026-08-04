@@ -1,6 +1,3 @@
-
-
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -10,6 +7,14 @@ import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import DeletePet from "@/components/DeletePet";
 import RequestButton from "@/components/RequestButton";
+
+
+export const metadata = {
+  title: "My Listings | Nest Paws",
+  description:
+    "View and manage all your pet listings on Nest Paws. Edit, delete, or check adoption requests for your listed pets.",
+};
+
 
 export default async function MyListingsPage() {
 
@@ -90,7 +95,7 @@ export default async function MyListingsPage() {
 
                                     {pet.adopted ? (
                                         <span className="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg border border-white/20">
-                                            ✅ Adopted
+                                            Adopted
                                         </span>
                                     ) : (
                                         <span className="absolute top-3 right-3 bg-success text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg border border-white/20">

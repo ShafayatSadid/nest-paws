@@ -14,8 +14,14 @@ async function getPets(searchParams) {
     return res.json();
 }
 
+export const metadata = {
+  title: "All Pets | Nest Paws",
+  description:
+    "Browse all pets available for adoption on Nest Paws. Find dogs, cats, birds, rabbits, and more. Search, filter, and sort to find your perfect furry friend.",
+};
+
 export default async function AllPetsPage({ searchParams }) {
-    // ✅ await করা হলো
+    // 
     const params = await searchParams;
     const pets = await getPets(params);
 
