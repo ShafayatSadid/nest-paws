@@ -18,15 +18,7 @@ The purpose of Nest Paws is to provide a seamless and user-friendly platform whe
 
 🔗 **Live Demo:** [https://nest-paws.vercel.app](https://nest-paws.vercel.app)
 
----
 
-## 📸 Screenshots
-
->[text](../../../../../..) 
-
-
-
----
 
 ## ✨ Features
 
